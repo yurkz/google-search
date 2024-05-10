@@ -30,7 +30,7 @@ export default function Search({ results }) {
             const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${API_KEY}&cx=${CONTEXT_KEY}&q=${QUERY}${SEARCH_TYPE && "&searchType=image"}&start=${STARTINDEX}`);
             const jsonData = await response.json();
             setData(jsonData);
-
+            console.log(STARTINDEX);
         } catch (error) {
             console.error("Error fetching data:", error);
         }

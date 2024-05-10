@@ -1,6 +1,6 @@
 import SearchHeader from "@/components/SearchHeader";
 import SearchResult from "@/components/SearchResult";
-import response from "@/response";
+
 
 import Head from "next/head";
 import { useRouter } from "next/router";

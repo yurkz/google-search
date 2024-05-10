@@ -22,7 +22,7 @@ export default function Search({ results }) {
     useEffect(() => {
         // Fetch data when the component mounts
         fetchData();
-    }, []);
+    }, [STARTINDEX]);
 
     async function fetchData() {
         try {

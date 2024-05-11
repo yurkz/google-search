@@ -7,7 +7,7 @@ export default function signin({ providers }) {
     return (
         <>
             <Header />
-            <div className='mt-40'>
+            {/* <div className='mt-40'>
                 {Object.values(providers).map(p => (
                     <div className='flex flex-col items-center' key={p.name}>
                         <img
@@ -28,7 +28,7 @@ export default function signin({ providers }) {
 
                     </div>
                 ))}
-            </div>
+            </div> */}
         </>
     )
 }

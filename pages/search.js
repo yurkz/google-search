@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 
 import Head from "next/head";
 import { useRouter } from "next/router";
+import ImageResults from "@/components/ImageResults";
 
 
 export default function Search({ results }) {
@@ -22,7 +23,7 @@ export default function Search({ results }) {
     useEffect(() => {
         // Fetch data when the component mounts
         fetchData();
-    }, [STARTINDEX]);
+    }, [STARTINDEX, SEARCH_TYPE]);
 
     async function fetchData() {
         try {
@@ -30,6 +31,7 @@ export default function Search({ results }) {
             const jsonData = await response.json();
             setData(jsonData);
             console.log(STARTINDEX);
+            console.log(SEARCH_TYPE);
         } catch (error) {
             console.error("Error fetching data:", error);
         }
@@ -41,11 +43,18 @@ export default function Search({ results }) {
             <Head>
                 <title>{router.query.query} - Search page</title>
             </Head>
-
-
             <SearchHeader />
 
-            {data && <SearchResult results={data} />}
+            {
+                SEARCH_TYPE == "image" ?
+                    (
+                        data && <ImageResults results={data} />
+                    )
+                    : (
+
+                        data && <SearchResult results={data} />
+                    )
+            }
         </div>
     )
 }

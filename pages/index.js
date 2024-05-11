@@ -18,6 +18,15 @@ export default function Home() {
     router.push(`/search?query=${searchValue.trim()}&searchType=`);
   }
 
+  const handleRandomSearch = async (e) => {
+    e.preventDefault();
+    const searchRandom = await fetch("https://random-word-api.herokuapp.com/word?number=1")
+      .then(response => response.json())
+
+    if (!searchRandom) return;
+
+    router.push(`/search?query=${searchRandom}&searchType=`);
+  }
 
   return (
     <div className="">
@@ -31,8 +40,8 @@ export default function Home() {
 
       <form className="flex flex-col items-center mt-52">
         <Image
-          //src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
-          src="https://media.licdn.com/dms/image/D4D12AQEG9wTchYm1xQ/article-cover_image-shrink_720_1280/0/1698925328170?e=2147483647&v=beta&t=Ct12hsgQWPcznb82UdLW8d0thopcn_fWboM9g57BV2U"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
+          //src="https://media.licdn.com/dms/image/D4D12AQEG9wTchYm1xQ/article-cover_image-shrink_720_1280/0/1698925328170?e=2147483647&v=beta&t=Ct12hsgQWPcznb82UdLW8d0thopcn_fWboM9g57BV2U"
           width={300}
           height={100}
           alt=""
@@ -48,7 +57,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col sm:flex-row w-[50%] space-y-2 mt-8 sm:space-y-0 sm:space-x-4 justify-center">
           <button onClick={handleSearch} className="btn">Google Search</button>
-          <button className="btn">Feeling Lucky</button>
+          <button onClick={handleRandomSearch} className="btn">Feeling Lucky</button>
         </div>
       </form>
 

@@ -14,7 +14,7 @@ const User = ({ className }) => {
         <>
             <button
                 className={`bg-blue-500 text-white px-6 py-2 font-medium rounded-md hover:brightness-105 hover:shadow-lg ${className}`}
-                onClick={signIn}> Sign In</button>
+                onClick={() => signIn()}> Sign In</button>
         </>
     )
 }

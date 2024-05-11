@@ -3,7 +3,7 @@ import { getProviders, signIn } from 'next-auth/react'
 
 
 export default function signin({ providers }) {
-
+    console.log("providers", providers)
     return (
         <>
             <Header />

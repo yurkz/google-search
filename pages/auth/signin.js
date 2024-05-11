@@ -3,7 +3,7 @@ import { getProviders, signIn } from 'next-auth/react'
 
 
 export default function signin({ providers }) {
-    console.log(providers)
+
     return (
         <>
             <Header />
@@ -34,6 +34,7 @@ export default function signin({ providers }) {
 }
 
 export async function getServerSideProps() {
+    console.log("getProviders()", await getProviders())
     const providers = await getProviders();
     return {
         props: { providers }

@@ -22,7 +22,7 @@ const Header = () => {
                 </Link>
 
                 <a onClick={() => router.push(`/search?query=${router.query.query || "google"}&searchType=image`)} className='link'>Images</a>
-                <User />
+                {/* <User /> */}
 
             </div>
         </header>

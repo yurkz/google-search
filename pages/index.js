@@ -39,14 +39,20 @@ export default function Home() {
       <Header />
 
       <form className="flex flex-col items-center mt-52">
-        <Image
+        {/* <Image
           src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png"
           //src="https://media.licdn.com/dms/image/D4D12AQEG9wTchYm1xQ/article-cover_image-shrink_720_1280/0/1698925328170?e=2147483647&v=beta&t=Ct12hsgQWPcznb82UdLW8d0thopcn_fWboM9g57BV2U"
           width={300}
           height={100}
           alt=""
           objectFit="cover"
-        />
+        /> */}
+        <div className="flex justify-center items-center flex-col">
+          <h1 className="  text-7xl" >
+            Search Engine
+          </h1>
+          <p className="font-semibold">  Inspired by NextJS         </p>
+        </div>
         <div className="flex w-full items-center mt-5 mx-auto max-w-[90%] border border-gray-200
         hover:shadow-lg focus-within:shadow-lg px-5 py-3 rounded-full
         sm:max-w-xl lg:max-w-2xl">
